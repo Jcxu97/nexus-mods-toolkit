@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexus-mods-toolkit"
+version = "0.1.0"
+description = "Drive nexusmods.com end-to-end from Python: upload mods, push updates, download files. Built on browser-harness for headed Chrome control via CDP."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "AKAK" },
+]
+keywords = ["nexusmods", "mods", "automation", "browser-harness", "cdp", "baldurs-gate-3", "skyrim", "fallout", "modding"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "browser-harness @ git+https://github.com/Jcxu97/browser-harness.git",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4",
+    "pytest>=8",
+]
+
+[project.urls]
+Homepage = "https://github.com/Jcxu97/nexus-mods-toolkit"
+Source = "https://github.com/Jcxu97/nexus-mods-toolkit"
+Issues = "https://github.com/Jcxu97/nexus-mods-toolkit/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
